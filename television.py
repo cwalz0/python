@@ -30,7 +30,6 @@ class Television:
             bool: The current power state (True = ON, False = OFF)
         '''
         self.__status = not self.__status
-        return self.__status
 
     def mute(self) -> bool:
         '''
@@ -47,7 +46,6 @@ class Television:
             else:
                 self.__volume = self.__vol_cache
                 self.__muted = False
-            return self.__muted
 
     def channel_up(self) -> int:
         '''
@@ -61,7 +59,6 @@ class Television:
                 self.__channel += 1
             else:
                 self.__channel = self.MIN_CHANNEL
-            return self.__channel
 
     def channel_down(self) -> int:
         '''
@@ -75,7 +72,6 @@ class Television:
                 self.__channel -= 1
             else:
                 self.__channel = self.MAX_CHANNEL
-            return self.__channel
 
     def volume_up(self) -> int:
         '''
@@ -92,7 +88,6 @@ class Television:
 
             if self.__volume < self.MAX_VOLUME:
                 self.__volume += 1
-            return self.__volume
 
     def volume_down(self) -> int:
         '''
@@ -109,7 +104,6 @@ class Television:
 
             if self.__volume > self.MIN_VOLUME:
                 self.__volume -= 1
-            return self.__volume
 
     def __str__(self) -> str:
         return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}"
